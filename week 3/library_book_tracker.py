@@ -15,12 +15,18 @@ while True:
             print("Book Exists")
 
     elif ch == "2":
-        i = input("Book ID: ")
-        if i in books:
-            books[i][2] += int(input("Quantity: "))
+    i = input("Book ID: ")
+
+    if i in books:
+        q = int(input("Quantity: "))
+
+        if q > 0:
+            books[i][2] += q
             print("Quantity Updated")
         else:
-            print("Book Not Found")
+            print("Invalid Quantity")
+    else:
+        print("Book Not Found")
 
     elif ch == "3":
         i = input("Book ID: ")
@@ -29,6 +35,7 @@ while True:
             print("Book Issued")
         else:
             print("Book Not Available")
+            
 
     elif ch == "4":
         i = input("Book ID: ")
