@@ -43,13 +43,19 @@ while True:
 
     elif ch == "4":
         i = input("Book ID: ")
+        found = False
+    
         for b in books:
             if b[0] == i:
-                print(b)
+                print("Book ID:", b[0])
+                print("Title:", b[1])
+                print("Author:", b[2])
+                print("Quantity:", b[3])
+                found = True
                 break
-        else:
+    
+        if not found:
             print("Book Not Found")
-
     elif ch == "5":
         for b in books:
             print(b)
