@@ -23,24 +23,39 @@ while True:
                 print("Book Added")
             else:
                 print("Invalid Quantity")
+
     elif ch == "2":
         i = input("Book ID: ")
+        found = False
+    
         for b in books:
-            if b[0] == i and b[3] > 0:
-                b[3] -= 1
-                print("Book Issued")
+            if b[0] == i:
+                found = True
+    
+                if b[3] > 0:
+                    b[3] -= 1
+                    print("Book Issued")
+                else:
+                    print("Book Not Available")
                 break
-        else:
-            print("Book Not Available")
+    
+        if not found:
+            print("Book Not Found")
 
     elif ch == "3":
         i = input("Book ID: ")
+        found = False
+    
         for b in books:
             if b[0] == i:
                 b[3] += 1
+                found = True
                 print("Book Returned")
                 break
-
+    
+        if not found:
+            print("Book Not Found")
+            
     elif ch == "4":
         i = input("Book ID: ")
         found = False
