@@ -11,18 +11,18 @@ while True:
         for b in books:
             if b[0] == i:
                 found = True
-
         if not found:
-            books.append([
-                i,
-                input("Title: "),
-                input("Author: "),
-                int(input("Quantity: "))
-            ])
-            print("Book Added")
-        else:
-            print("Book Exists")
-
+            q = int(input("Quantity: "))
+            if q > 0:
+                books.append([
+                    i,
+                    input("Title: "),
+                    input("Author: "),
+                    q
+                ])
+                print("Book Added")
+            else:
+                print("Invalid Quantity")
     elif ch == "2":
         i = input("Book ID: ")
         for b in books:
