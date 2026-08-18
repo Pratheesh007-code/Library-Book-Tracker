@@ -24,22 +24,25 @@ while True:
 
     elif ch == "2":
         i = input("Book ID: ")
-
-        if i in books and books[i][2] > 0:
-            books[i][2] -= 1
-            print("Book Issued")
+    
+        if i in books:
+            if books[i][2] > 0:
+                books[i][2] -= 1
+                print("Book Issued")
+            else:
+                print("Book Not Available")
         else:
-            print("Book Not Available")
-
+            print("Book Not Found")
+    
     elif ch == "3":
         i = input("Book ID: ")
-
+    
         if i in books:
             books[i][2] += 1
             print("Book Returned")
         else:
             print("Book Not Found")
-
+    
     elif ch == "4":
         i = input("Book ID: ")
     
