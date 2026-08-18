@@ -8,15 +8,20 @@ while True:
         i = input("Book ID: ")
 
         if i not in books:
-            books[i] = [
+            q = int(input("Quantity: "))
+
+            if q > 0:
+                books[i] = [
                 input("Title: "),
                 input("Author: "),
-                int(input("Quantity: "))
-            ]
-            print("Book Added")
+                q
+                ]
+                print("Book Added")
+            else:
+                print("Invalid Quantity")
         else:
             print("Book Exists")
-
+            
     elif ch == "2":
         i = input("Book ID: ")
 
