@@ -21,7 +21,7 @@ while True:
                 print("Invalid Quantity")
         else:
             print("Book Exists")
-            
+
     elif ch == "2":
         i = input("Book ID: ")
 
@@ -42,8 +42,15 @@ while True:
 
     elif ch == "4":
         i = input("Book ID: ")
-        print(books.get(i, "Book Not Found"))
-
+    
+        if i in books:
+            print("Book ID:", i)
+            print("Title:", books[i][0])
+            print("Author:", books[i][1])
+            print("Quantity:", books[i][2])
+        else:
+            print("Book Not Found")
+    
     elif ch == "5":
         print(books)
 
