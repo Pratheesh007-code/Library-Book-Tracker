@@ -1,7 +1,7 @@
 books = {}
 
 while True:
-    print("\n1.Add 2.View 3.Exit")
+    print("\n1.Add 2.View 3.Update 4.Exit")
     ch = input("Choice: ")
 
     if ch == "1":
@@ -22,4 +22,11 @@ while True:
             print(i, b)
 
     elif ch == "3":
-        break
+        i = input("Book ID: ")
+    
+        if i in books:
+            books[i][0] = input("New Title: ")
+            books[i][1] = input("New Author: ")
+            print("Book Updated")
+        else:
+            print("Book Not Found")
