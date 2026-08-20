@@ -1,7 +1,7 @@
 books = {}
 
 while True:
-    print("\n1.Add 2.View 3.Update 4.Exit")
+    print("\n1.Add 2.View 3.Update 4.Delete 5.Exit")
     ch = input("Choice: ")
 
     if ch == "1":
@@ -30,3 +30,15 @@ while True:
             print("Book Updated")
         else:
             print("Book Not Found")
+
+    elif ch == "4":
+        i = input("Book ID: ")
+    
+        if i in books:
+            del books[i]
+            print("Book Deleted")
+        else:
+            print("Book Not Found")
+
+    elif ch == "5":
+        break
