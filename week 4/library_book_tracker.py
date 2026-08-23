@@ -1,7 +1,7 @@
 books = {}
 
 while True:
-    print("\n1.Add 2.View 3.Update 4.Delete 5.Exit")
+    print("\n1.Add 2.View 3.Update 4.Delete 5.Search 6.Exit")
     ch = input("Choice: ")
 
     if ch == "1":
@@ -41,4 +41,16 @@ while True:
             print("Book Not Found")
 
     elif ch == "5":
+        key = input("Search Title/Author: ").lower()
+        found = False
+    
+        for i, b in books.items():
+            if key in b[0].lower() or key in b[1].lower():
+                print(i, b)
+                found = True
+    
+        if not found:
+            print("Book Not Found")
+
+    elif ch == "6":
         break
