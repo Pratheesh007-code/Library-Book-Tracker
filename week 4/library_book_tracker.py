@@ -1,7 +1,7 @@
 books = {}
 
 while True:
-    print("\n1.Add 2.View 3.Update 4.Delete 5.Search 6.Exit")
+    print("\n1.Add 2.View 3.Update 4.Delete 5.Search 6.Report 7.Exit")
     ch = input("Choice: ")
 
     if ch == "1":
@@ -53,4 +53,13 @@ while True:
             print("Book Not Found")
 
     elif ch == "6":
+        total = 0
+    
+        for b in books.values():
+            total += b[2]
+    
+        print("Total Books:", total)
+        print("Different Titles:", len(books))
+
+    elif ch == "7":
         break
