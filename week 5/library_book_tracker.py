@@ -68,7 +68,6 @@ while True:
     
     elif ch == "8":
         i = input("Book ID: ")
-    
         if i in books:
             del books[i]
             print("Book Deleted")
